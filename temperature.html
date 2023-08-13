@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature</title>
+    <style>
+        body{
+            background-color: rgba(198, 207, 18, 0.721);
+        }
+        .box{
+            width: 600px;
+            height: 600px;
+            border: 2px solid white;
+            margin-left: 370px;
+            margin-top: 30px;
+            background-color: black;
+            border-radius: 50px;
+        }
+        .container{
+            background:linear-gradient(#159957,#155799);
+            width: 500px;
+            height: 500px;
+            border: 3px solid rgba(255, 255, 255, 0.905);
+            border-radius: 400px;
+            margin-left: 50px;
+           
+        }
+        label{
+            margin-left: 100px;
+        }
+        input{
+            width: 200px;
+            height: 30px;
+            margin-left: 5px;
+            border: 1.9px solid black;
+            border-radius: 5px;
+        }
+        .celsius{
+            margin-top: 140px;
+        }
+        button{
+            width: 150px;
+            height: 30px;
+            margin-left: 200px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            background-color: black;
+            border: 1px solid white;
+            color: white;
+            border-radius: 30%;
+        }
+        .fv-button{
+            margin-left: 80px;
+        }
+        h1{
+            color: white;
+            border-bottom: 2px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <center><h1>Tempreture Converter</h1></center>
+    <div class="container">
+        <label class="cv-button" for="celsius">Celsius(°C)</label>
+        <input class="celsius" type="number/text" name="celsius" id="celsius" placeholder="Celsius" ><br>
+        <button onclick="changeDeg()">Convert to Celsius</button> <br>
+        <label for="celsius" class="fv-button">Fehrenheite(°F)</label>
+        <input type="text/number" class="fehrenheite" name="fehrenheite" id="fehrenheite" placeholder="Fehrenheite" >
+        <button onclick="cd()">Convert to fehrenheite</button> <br>
+    </div>
+</div>
+  <p style="color: red;">Adarsh Mishra</p>
+    <script>
+        /*converting celsius to fehrenheite */
+        const changeDeg = () =>{
+            const cv= document.getElementById('celsius').value;
+            let newfv = (cv * (9/5)+32) ;
+            console.log(newfv);
+            document.getElementById('fehrenheite').value = newfv+"°F"
+        }
+        /* converting fehrenheite to celsius*/
+        const cd = () =>{
+            const fv= document.getElementById('fehrenheite').value;
+            let newcv = (fv - 32)*5/9 ;
+            console.log(newcv);
+            document.getElementById('celsius').value = newcv+"°C"
+        } 
+    </script>
+</body>
+</html>
